@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Data.Entity;
+using AviaTor.Models;
 
 namespace AviaTor
 {
@@ -12,6 +14,8 @@ namespace AviaTor
     {
         protected void Application_Start()
         {
+            Database.SetInitializer(new ValueDbInitializer());
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
