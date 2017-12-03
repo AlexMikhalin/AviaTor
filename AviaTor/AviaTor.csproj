@@ -198,6 +198,9 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\InitializeDb.cs" />
+    <Compile Include="Models\KlienContext.cs" />
+    <Compile Include="Models\Klients.cs" />
+    <Compile Include="Models\KlientsDb.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ValContext.cs" />
     <Compile Include="Models\Value.cs" />

@@ -17,11 +17,15 @@
             
             @foreach (var v in ViewBag.Values)
             {
+                
                 <tr>
-                    <td>Кэшбек:</td><td>@v.Cashback</td>
+                    <td>Кэшбек:</td><td><input type="text" value=@v.Cashback /></td>
                  </tr>
                  <tr>
-                    <td>Процент скидки: </td><td>@v.Procent</td>
+                    <td>Процент скидки: </td><td><input type="text" value=@v.Procent /></td>
+                 </tr>
+                 <tr>
+                     <td><input type="submit" value="Сохранить" /></td>
                  </tr>
                  <tr>
                     <td>Посетители: </td><td>@v.Posetit</td>
@@ -31,6 +35,23 @@
                  </tr>
                 
             }
+        </table>
+        <table cellspacing="3" >
+            <tr class="header">
+                <td><p>Имя</p></td>
+                <td><p>Телефон</p></td>
+                <td><p>Бонусы</p></td>
+                <td></td>
+            </tr>
+           @foreach (var b in ViewBag.Clienti)
+            {
+            <tr>
+                <td><p>@b.Name</p></td>
+                <td><p>@b.Phone</p></td>
+                <td><p>@b.Bonus</p></td>
+                
+            </tr>
+           }
         </table>
     </div>
 </body>
