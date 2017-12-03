@@ -13,46 +13,62 @@
 <body>
     <div>
         <h3>Статистика:</h3>
+        <br />
+
         <table>
-            
             @foreach (var v in ViewBag.Values)
             {
+
+                <tr>
+                    <td>Кэшбек:</td>
+                    <td><input type="text" value=@v.Cashback /></td><td><input type="submit" value="Сохранить" class="change_positions" /></td>
+                </tr>
+                <tr>
+                    <td>Процент скидки: </td>
+                    <td><input type="text" value=@v.Procent /></td><td><input type="submit" value="Сохранить" class="change_positions" /></td>
+                </tr>
+                
+                   
                 
                 <tr>
-                    <td>Кэшбек:</td><td><input type="text" value=@v.Cashback /></td>
-                 </tr>
-                 <tr>
-                    <td>Процент скидки: </td><td><input type="text" value=@v.Procent /></td>
-                 </tr>
-                 <tr>
-                     <td><input type="submit" value="Сохранить" /></td>
-                 </tr>
-                 <tr>
-                    <td>Посетители: </td><td>@v.Posetit</td>
-                 </tr>
-                 <tr>
-                    <td>Сумма: </td><td>@v.Sum</td>
-                 </tr>
-                
+                    <td>Посетители: </td>
+                    <td>@v.Posetit</td>
+                </tr>
+                <tr>
+                    <td>Средний чек: </td>
+                    <td>@v.Sum</td>
+                </tr>
+
+
+
             }
         </table>
-        <table cellspacing="3" >
-            <tr class="header">
-                <td><p>Имя</p></td>
-                <td><p>Телефон</p></td>
-                <td><p>Бонусы</p></td>
-                <td></td>
-            </tr>
-           @foreach (var b in ViewBag.Clienti)
+
+        <br />
+        <h3>Ваши клиенты</h3>
+        <br />
+        <div class="row header">
+            <div class="col-md-2">
+                <p>Имя</p>
+            </div>
+            <div class="col-md-5">
+                <p>Телефон</p>
+            </div>
+            <div class="col-md-2">
+                <p>Бонусы</p>
+            </div>
+
+                </div>
+                @foreach (var b in ViewBag.Clienti)
             {
-            <tr>
-                <td><p>@b.Name</p></td>
-                <td><p>@b.Phone</p></td>
-                <td><p>@b.Bonus</p></td>
-                
-            </tr>
-           }
-        </table>
-    </div>
+                    <div class="row header">
+                        <div class="col-md-2">  <p>@b.Name</p> </div>
+                        <div class="col-md-5">  <p>@b.Phone</p> </div>
+                        <div class="col-md-2"> <p>@b.Bonus</p> </div>
+                    </div>
+
+                }
+
+            </div>
 </body>
 </html>
