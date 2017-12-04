@@ -16,5 +16,6 @@ namespace AviaTor.Models
 
             base.Seed(db);
         }
+
     }
 }

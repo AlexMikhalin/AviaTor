@@ -15,6 +15,7 @@ namespace AviaTor
         protected void Application_Start()
         {
             Database.SetInitializer(new ValueDbInitializer());
+            Database.SetInitializer(new KlientsDb());
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

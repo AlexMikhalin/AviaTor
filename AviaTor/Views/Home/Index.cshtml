@@ -9,29 +9,94 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Статистика</title>
+    <style>
+        /*table {
+            background-color: #fff6ea;
+            border-style: dotted;
+            border-width: 4px;
+            border-color: #cee1ff;
+            padding: 10px;
+        }*/
+        .black-color {
+            border-style: dotted;
+            border-width: 4px;
+            border-color: #cee1ff;
+            background-color: #fff6ea;
+            padding: 10px;
+        }
+        body {
+            background: #33bbf1;
+            background: linear-gradient(#f9fbff 50%, #fff8ef 50%);
+            background-size: 50px 50px;
+        }
+    </style>
 </head>
 <body>
     <div>
         <h3>Статистика:</h3>
-        <table>
-            
-            @foreach (var v in ViewBag.Values)
+        <br />
+        <div class="black-color">
+            <table>
+                @foreach (var v in ViewBag.Values)
             {
-                <tr>
-                    <td>Кэшбек:</td><td>@v.Cashback</td>
-                 </tr>
-                 <tr>
-                    <td>Процент скидки: </td><td>@v.Procent</td>
-                 </tr>
-                 <tr>
-                    <td>Посетители: </td><td>@v.Posetit</td>
-                 </tr>
-                 <tr>
-                    <td>Сумма: </td><td>@v.Sum</td>
-                 </tr>
-                
-            }
-        </table>
-    </div>
+
+                    <tr>
+                        <td>Кэшбек:</td>
+                        <td><input type="text" value=@v.Cashback /></td>
+                        <td><input type="submit" value="Сохранить" class="change_positions" /></td>
+                    </tr>
+                    <tr>
+                        <td>Процент скидки: </td>
+                        <td><input type="text" value=@v.Procent /></td>
+                        <td><input type="submit" value="Сохранить" class="change_positions" /></td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td>Посетители: </td>
+                        <td>@v.Posetit</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Средний чек: </td>
+                        <td>@v.Sum</td>
+                        <td></td>
+                    </tr>
+
+
+
+                }
+            </table>
+            </div>
+            <br />
+            <div class="black-color">
+                <h3>Ваши клиенты</h3>
+                <br />
+                <div class="row header">
+                    <div class="col-md-2">
+                        <p>Имя</p>
+                    </div>
+                    <div class="col-md-5">
+                        <p>Телефон</p>
+                    </div>
+                    <div class="col-md-2">
+                        <p>Бонусы</p>
+                    </div>
+
+                </div>
+                @foreach (var b in ViewBag.Clienti)
+            {
+                    <div class="row header">
+                        <div class="col-md-2">  <p>@b.Name</p> </div>
+                        <div class="col-md-5">  <p>@b.Phone</p> </div>
+                        <div class="col-md-2"> <p>@b.Bonus</p> </div>
+                    </div>
+
+                }
+
+            </div>
+        </div>
+
 </body>
 </html>
